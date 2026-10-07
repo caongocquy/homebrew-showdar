@@ -4,7 +4,7 @@ Homebrew tap for Showdar CLI tools.
 
 ## Install
 
-Once a tool publishes Homebrew release assets:
+Install directly:
 
 ```bash
 brew install caongocquy/showdar/code-atlas
@@ -17,7 +17,11 @@ Or tap once:
 ```bash
 brew tap caongocquy/showdar
 brew install code-atlas
+brew install showdar-skills
+brew install showdar-router
 ```
+
+The formulas install the self-contained macOS platform bundle published in each project's GitHub Release. Node 24 is bundled with each archive, so a separate Node installation is not required. Current release bundles target macOS 15 or newer.
 
 ## Packages
 
@@ -25,6 +29,19 @@ brew install code-atlas
 - [Showdar Skills](https://github.com/caongocquy/showdar-skills)
 - [Showdar Router](https://github.com/caongocquy/showdar-router)
 
-## Maintenance
+Each project also publishes Linux x64 and Windows x64 self-contained archives to GitHub Releases. Windows users can continue installing from npm or download the release archive directly.
 
-Formula files live in `Formula/` and are updated by each project's release workflow after macOS release artifacts are published.
+## Release flow
+
+A tagged release builds native platform bundles:
+
+```text
+<tool>-darwin-arm64.tar.gz
+<tool>-darwin-x64.tar.gz
+<tool>-linux-x64.tar.gz
+<tool>-windows-x64.zip
+```
+
+Each archive is accompanied by a `.sha256` file.
+
+`scripts/sync-formulas.mjs` reads the latest stable GitHub Releases and updates `Formula/*.rb` when both macOS assets are available. The sync workflow runs hourly and can also be triggered manually.

@@ -1,0 +1,45 @@
+name: Sync Homebrew Formulas
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: homebrew-formula-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout tap
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Sync formulas from latest GitHub Releases
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/sync-formulas.mjs
+
+      - name: Commit formula updates
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- Formula; then
+            echo "No formula updates."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Formula
+          git commit -m "chore: sync Homebrew formulas"
+          git push
