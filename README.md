@@ -21,7 +21,7 @@ brew install showdar-skills
 brew install showdar-router
 ```
 
-The formulas install the macOS platform bundle published in each project's GitHub Release and use Homebrew's `node@24` runtime. Current release bundles target macOS 15 or newer.
+The formulas install the self-contained macOS platform bundle published in each project's GitHub Release. Node 24 is bundled with each archive, so a separate Node installation is not required. Current release bundles target macOS 15 or newer.
 
 ## Packages
 
@@ -29,7 +29,7 @@ The formulas install the macOS platform bundle published in each project's GitHu
 - [Showdar Skills](https://github.com/caongocquy/showdar-skills)
 - [Showdar Router](https://github.com/caongocquy/showdar-router)
 
-Each project also publishes Linux x64 and Windows x64 archives to GitHub Releases. Windows users can continue installing from npm or download the release archive directly.
+Each project also publishes Linux x64 and Windows x64 self-contained archives to GitHub Releases. Windows users can continue installing from npm or download the release archive directly.
 
 ## Release flow
 
