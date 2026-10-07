@@ -110,7 +110,7 @@ function formulaSource(config, release, assets) {
 
     (bin/"${config.binName}").write <<~SH
       #!/bin/sh
-      exec "#{Formula["node@24"].opt_bin}/node" "#{libexec}/${config.entry}" "$@"
+      exec "#{libexec}/runtime/node" "#{libexec}/${config.entry}" "$@"
     SH
     (bin/"${config.binName}").chmod 0755
   end
