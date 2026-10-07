@@ -93,7 +93,6 @@ function formulaSource(config, release, assets) {
   license "${config.license}"
 
   depends_on macos: :sequoia
-  depends_on "node@24"
 
   on_arm do
     url "${assets.arm.url}"
