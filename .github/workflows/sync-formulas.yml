@@ -33,13 +33,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if git diff --quiet -- Formula; then
+          git add -- Formula
+          if git diff --cached --quiet -- Formula; then
             echo "No formula updates."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Formula
           git commit -m "chore: sync Homebrew formulas"
           git push
