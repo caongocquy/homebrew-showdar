@@ -1,19 +1,19 @@
 class ShowdarSkills < Formula
   desc "Software engineering lifecycle skills for coding agents"
   homepage "https://github.com/caongocquy/showdar-skills"
-  version "0.15.0"
+  version "0.15.1"
   license "MIT"
 
   depends_on macos: :sequoia
 
   on_arm do
-    url "https://github.com/caongocquy/showdar-skills/releases/download/v0.15.0/showdar-skills-darwin-arm64.tar.gz"
-    sha256 "1bfaf1341631f9fb0ad0415e5301217b1cfa8619414a75c4d2331d478dd87bf9"
+    url "https://github.com/caongocquy/showdar-skills/releases/download/v0.15.1/showdar-skills-darwin-arm64.tar.gz"
+    sha256 "5a9e899046d3c51127b0b237ee5dc4f251cb49811eb8b63187612f9f7fa1970f"
   end
 
   on_intel do
-    url "https://github.com/caongocquy/showdar-skills/releases/download/v0.15.0/showdar-skills-darwin-x64.tar.gz"
-    sha256 "3d513c1390776c58f428af195ebba6545d7bb4b31573d1aef574bdac2084aac6"
+    url "https://github.com/caongocquy/showdar-skills/releases/download/v0.15.1/showdar-skills-darwin-x64.tar.gz"
+    sha256 "aa9e57328b8c07006313c1e7055128eff7daa2bf85e84ff0a6619460b1ab5131"
   end
 
   def install
