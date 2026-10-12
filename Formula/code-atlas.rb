@@ -1,19 +1,19 @@
 class CodeAtlas < Formula
   desc "Local-first code intelligence engine with optional AI"
   homepage "https://github.com/caongocquy/code-atlas"
-  version "1.6.1"
+  version "1.6.2"
   license "ISC"
 
   depends_on macos: :sequoia
 
   on_arm do
-    url "https://github.com/caongocquy/code-atlas/releases/download/v1.6.1/code-atlas-darwin-arm64.tar.gz"
-    sha256 "6ec9cee788bdef9cf6f9933bd041645cf091cf6c1279b4354bd40a7092541dca"
+    url "https://github.com/caongocquy/code-atlas/releases/download/v1.6.2/code-atlas-darwin-arm64.tar.gz"
+    sha256 "b62c7b88ee4156693147076b6013e31391f1d73ea9746be39ebb4c4f9a11446c"
   end
 
   on_intel do
-    url "https://github.com/caongocquy/code-atlas/releases/download/v1.6.1/code-atlas-darwin-x64.tar.gz"
-    sha256 "8dbcb861879dcfc327623b5136e70ca29a8c1edca968e3b04f9bfeaebfd54841"
+    url "https://github.com/caongocquy/code-atlas/releases/download/v1.6.2/code-atlas-darwin-x64.tar.gz"
+    sha256 "5ec6d204a58ace0c01e8db51a8aa367941bf24ff2bef8786e15504680a93c686"
   end
 
   def install
